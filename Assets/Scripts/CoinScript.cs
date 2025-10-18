@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class CoinScript : MonoBehaviour
 {
+
+    private int coinValue = 10;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +21,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Got coin!");
+            //sumar puntos
+            PointManager.Instance.AddPoints(coinValue);
             //desactivar el objeto
             gameObject.SetActive(false);
         }
